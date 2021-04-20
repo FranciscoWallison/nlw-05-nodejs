@@ -1,0 +1,45 @@
+{
+	"id": "7db369d9-f3cc-7658-dd81-62ae0fd6de19",
+	"name": "nlw-05-nodejs",
+	"description": "",
+	"order": [
+		"dd0a4acc-c62b-01a1-dc13-940a143fdd65"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1618933936998,
+	"owner": "2500282",
+	"public": false,
+	"requests": [
+		{
+			"id": "dd0a4acc-c62b-01a1-dc13-940a143fdd65",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3333/settings",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1618934078172,
+			"name": "CreateSettings",
+			"description": "",
+			"collectionId": "7db369d9-f3cc-7658-dd81-62ae0fd6de19",
+			"responses": [],
+			"rawModeData": "{\n\t\"chat\": true,\n\t\"username\": \"admin\"\n}"
+		}
+	]
+}
