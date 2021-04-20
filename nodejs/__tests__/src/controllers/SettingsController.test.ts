@@ -1,11 +1,49 @@
-import app "../../../src/server";
+import request from 'supertest';
+import { app } from '../../../src/app';
+import {connection} from '../../../src/database'
+import { SettingsRepository } from '../../../src/repositories/SettingsRepository'
 
-describe('testing index file', () => {
-  test('double function', () => {
-    expect(double(5)).toBe(10);
+describe('Users', () => {
+  beforeAll(async () => {    
+    const cn = await connection;
+    await cn.dropDatabase();       
+    await cn.runMigrations({
+        transaction: "all"
+    });
   });
 
-  test('concat function', () => {
-    expect(concat('Paul', ' ', 'McCartney')).toBe('Paul McCartney');
+  it('Validar campos vazios Settings', async () => {
+    const response = await request(app).post('/settings').send({
+      chat: '',
+      username: '',
+    });
+
+    expect(response.status).toBe(400);
+  });
+
+
+  it('Validar cadastro Settings', async () => {
+    let setting = {
+      chat: true,
+      username: 'admin',
+    }
+    const response = await request(app).post('/settings').send(setting);
+    expect(response.status).toBe(200);
+
+    const settingsRepository = (await connection).getCustomRepository(SettingsRepository);
+    const validSetting = await settingsRepository.findOne(setting);
+
+    expect(setting).toMatchObject(
+      {
+        chat: validSetting?.chat,
+        username: validSetting?.username
+      }
+    );
+  });
+
+
+  afterAll(async () => {
+    const cn = await connection;
+    await cn.dropDatabase();
   });
 });

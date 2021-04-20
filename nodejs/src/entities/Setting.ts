@@ -16,7 +16,7 @@ class Setting {
     username: string;
 
     @Column()
-    chat: string;
+    chat: boolean;
 
     @CreateDateColumn()
     created_at: Date;

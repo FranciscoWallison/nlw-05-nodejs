@@ -1,5 +1,4 @@
 import { Request, Response } from 'express';
-import { getRepository } from 'typeorm';
 import { SettingsRepository } from '../repositories/SettingsRepository';
 import { AppError } from '../errors/AppError';
 import {connection}  from  '../database';
