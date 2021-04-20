@@ -1,12 +1,26 @@
 import { Request, Response } from 'express';
-import { getCustomRepository } from 'typeorm';
+import { getRepository } from 'typeorm';
 import { SettingsRepository } from '../repositories/SettingsRepository';
+import { AppError } from '../errors/AppError';
+import {connection}  from  '../database';
+import * as Yup from 'yup';
 
 class SettingsController {
-  async create(req: Request, res: Response) {
-    const { chat, username } = req.body;
+  async create(request: Request, response: Response) {
+    const { chat, username } = request.body;
 
-    const settingsRepository = getCustomRepository(SettingsRepository);
+    const schema = Yup.object().shape({
+      chat: Yup.string().required(),
+      username: Yup.string().required(),
+    });
+
+    try {
+      await schema.validate(request.body, { abortEarly: false });
+    } catch (error) {
+      throw new AppError(error);
+    }
+
+    const settingsRepository = (await connection).getCustomRepository(SettingsRepository);
 
     const setting = settingsRepository.create({
       chat,
@@ -15,7 +29,7 @@ class SettingsController {
 
     await settingsRepository.save(setting);
 
-    return res.json(setting);
+    return response.json(setting);
   }
 }
 

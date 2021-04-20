@@ -1,3 +1,3 @@
 import { createConnection } from 'typeorm';
-
-createConnection();
+const connection = createConnection();
+export { connection };
