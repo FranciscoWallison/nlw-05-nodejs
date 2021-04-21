@@ -31,12 +31,12 @@ describe('Users', () => {
     expect(response.status).toBe(200);
 
     const settingsRepository = (await connection).getCustomRepository(SettingsRepository);
-    const validSetting = await settingsRepository.findOne(setting);
+    const validSetting = await settingsRepository.findOne(setting as any);
 
     expect(setting).toMatchObject(
       {
-        chat: validSetting?.chat,
-        username: validSetting?.username
+        chat: (validSetting as any)?.chat,
+        username: (validSetting as any)?.username
       }
     );
   });

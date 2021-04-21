@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
-import { SettingsRepository } from '../repositories/SettingsRepository';
+import { SettingsService } from '../services/SettingsService';
 import { AppError } from '../errors/AppError';
-import {connection}  from  '../database';
 import * as Yup from 'yup';
 
 class SettingsController {
@@ -19,16 +18,18 @@ class SettingsController {
       throw new AppError(error);
     }
 
-    const settingsRepository = (await connection).getCustomRepository(SettingsRepository);
+    let setting_request = {
+      chat: chat,
+      username: username,
+    }
+    const settingsService = new SettingsService();
+    try {
+      const setting = await settingsService.create(setting_request);
 
-    const setting = settingsRepository.create({
-      chat,
-      username,
-    });
-
-    await settingsRepository.save(setting);
-
-    return response.json(setting);
+      return response.json(setting);
+    } catch (err) {
+      return response.status(400).json({ message: err.message });
+    }
   }
 }
 
