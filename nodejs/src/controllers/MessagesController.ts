@@ -31,17 +31,6 @@ class MessagesController {
   async showByUser(request: Request, response: Response): Promise<Response> {
     const { id } = request.params;
 
-    
-    const schema = Yup.object().shape({
-      id: Yup.string().required(),
-    });
-
-    try {
-      await schema.validate(request.body, { abortEarly: false });
-    } catch (error) {
-      throw new AppError(error);
-    }
-
     const messagesService = new MessagesService();
 
     const messages = await messagesService.listByUser(id);

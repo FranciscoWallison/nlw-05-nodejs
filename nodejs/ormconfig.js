@@ -1,5 +1,5 @@
 /**
- * 
+ * Configurações de bancos sqlite, mysql, postgres e mongodb
  */
 module.exports =
 [

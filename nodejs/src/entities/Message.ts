@@ -15,8 +15,6 @@ import {
   class Message {
     @PrimaryGeneratedColumn('uuid')
     id: string;
-  
-    @Column()
     
     @Column('varchar', {
       nullable: true
@@ -26,8 +24,8 @@ import {
     @Column()
     user_id: string;
   
-    @ManyToOne(() => User)
     @JoinColumn({ name: 'user_id' })
+    @ManyToOne(() => User)
     user: User;
   
     @Column()
