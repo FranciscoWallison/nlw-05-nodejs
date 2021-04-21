@@ -96,4 +96,44 @@ module.exports =
         ],
         "synchronize": true
     },
+    {
+        "name": "mongodb",
+        "type": "mongodb",
+        // "url": "mongodb://root:root@db_mongodb/database_nlw?retryWrites=true&w=majority",
+        "host": "db_mongodb",
+        "port": 27017,
+        "username": "root",
+        "password": "root",
+        "database": "database_nlw",
+        "entities": [
+            process.env.TYPE_ORM_ENTITIES_DIR, 
+        ],
+        "synchronize": true,
+        "logging": true,
+        "useUnifiedTopology": true,
+        "useNewUrlParser": true,
+        "extra": {
+            "authSource": "admin"
+        }
+    },
+    {
+        "name": "mongodb_test",
+        "type": "mongodb",
+        // "url": "mongodb://root:root@db_mongodb/database_nlw?retryWrites=true&w=majority",
+        "host": "db_mongodb",
+        "port": 27017,
+        "username": "root",
+        "password": "root",
+        "database": "database_nlw_test",
+        "entities": [
+            process.env.TYPE_ORM_ENTITIES_DIR, 
+        ],
+        "synchronize": true,
+        "logging": true,
+        "useUnifiedTopology": true,
+        "useNewUrlParser": true,
+        "extra": {
+            "authSource": "admin"
+        }
+    },
 ]

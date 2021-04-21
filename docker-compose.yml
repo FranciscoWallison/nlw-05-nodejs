@@ -17,11 +17,72 @@ services:
       - ./nodejs:/src/app
     working_dir: /src/app
     environment:
-      # ESCOLHA O SEU DRIVE ENTRE sqlite, mysql E postgres
-      - CONNECTION_DRIVE=sqlite
+      # ESCOLHA O SEU DRIVE ENTRE sqlite, mysql, postgres E mongodb
+      - CONNECTION_DRIVE=mongodb
       # CONFIGURAÇÕES MIGRATIONS
-      - TYPE_ORM_LOGGING=true
-      - TYPE_ORM_ENTITIES=./src/entities/*.ts
+      - TYPE_ORM_LOGGING=true     
       - TYPE_ORM_MIGRATIONS=./src/database/migrations/**.ts
       - TYPE_ORM_MIGRATIONS_DIR=./src/database/migrations
-      - TYPE_ORM_ENTITIES_DIR=./src/entities/**.ts
+      # PARA OS DRIVE ENTRE sqlite, mysql E postgres
+      # - TYPE_ORM_ENTITIES=./src/entities/*.ts
+      # - TYPE_ORM_ENTITIES_DIR=./src/entities/**.ts
+      # PARA O DRIVE mongodb
+      - TYPE_ORM_ENTITIES=./src/entities_mongodb/*.ts
+      - TYPE_ORM_ENTITIES_DIR=./src/entities_mongodb/**.ts
+    depends_on: 
+      - db_mysql
+      - db_pg
+      - db_mongodb
+        
+  # CONFIGURAÇÕES MYSQL
+  db_mysql:
+    container_name: db_mysql
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    tty: true
+    ports:
+      - "3336:3306"
+    volumes:
+      - ./dbs/mysql/dbdata:/var/lib/mysql
+      - ./dbs/init/nlw_mysql.sql:/docker-entrypoint-initdb.d/dump.sql
+    environment:
+      - MYSQL_DATABASE=database_nlw
+      - MYSQL_ROOT_PASSWORD=root
+    networks:
+      - nlw-app-network
+  
+  # CONFIGURAÇÕES POSTGRES
+  db_pg:
+    container_name: db_pg
+    image: postgres:9.6
+    volumes:
+      # Volume dos dados
+      - ./dbs/init/nlw_pg.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./dbs/pg/dbdata:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=database_nlw
+      - POSTGRES_PASSWORD=postgres
+      - PGPORT=5432
+    networks:
+      - nlw-app-network
+  
+  db_mongodb:
+    container_name: db_mongodb
+    image: mongo:latest
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_DATABASE=database_nlw
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+    volumes:
+      # Volume dos dados
+      - ./dbs/init/init-mongo.js:/docker-entrypoint-initdb.d/*.js
+      - ./dbs/mongo/dbdata:/data/db
+    networks:
+      - nlw-app-network

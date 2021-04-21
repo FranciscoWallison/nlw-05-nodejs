@@ -9,8 +9,10 @@ export class CreateSettings1618930907540 implements MigrationInterface {
               columns: [
                 {
                   name: 'id',
-                  type: 'uuid',
                   isPrimary: true,
+                  type: "varchar",    
+                  generationStrategy: 'uuid',
+                  default:  process.env.CONNECTION_DRIVE === 'mysql' ? `(UUID_TO_BIN(UUID(), TRUE))` : 'uuid_generate_v4()'
                 },
                 {
                   name: 'username',
