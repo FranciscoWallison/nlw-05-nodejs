@@ -3,7 +3,10 @@
 	"name": "nlw-05-nodejs",
 	"description": "",
 	"order": [
-		"dd0a4acc-c62b-01a1-dc13-940a143fdd65"
+		"dd0a4acc-c62b-01a1-dc13-940a143fdd65",
+		"d0aeabff-9452-a1ff-6491-f6ae29bf27cd",
+		"c95504c2-23ec-47f7-d48c-231b80a24ae4",
+		"c28f5703-682e-dc6b-7e99-fb5523153b0c"
 	],
 	"folders": [],
 	"folders_order": [],
@@ -12,9 +15,123 @@
 	"public": false,
 	"requests": [
 		{
-			"id": "dd0a4acc-c62b-01a1-dc13-940a143fdd65",
-			"headers": "Content-Type: application/json\n",
+			"id": "c28f5703-682e-dc6b-7e99-fb5523153b0c",
+			"headers": "Accept: application/json\nContent-Type: application/json\n",
 			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3333/messages/4d7c270e-f857-414a-83bb-4f86af1a4479",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1619090436661,
+			"name": "List Messages By User",
+			"description": "",
+			"collectionId": "7db369d9-f3cc-7658-dd81-62ae0fd6de19",
+			"responses": [],
+			"rawModeData": "{\n\t\"user_id\": \"8d194fad-5b64-438c-9624-c0101bb5acba\",\n\t\"text\": \"Olá, oque posso ajuda!\",\n\t\"admin_id\": \"c8909132-9259-48ef-8fe2-2b53581eea3b\"\n}"
+		},
+		{
+			"id": "c95504c2-23ec-47f7-d48c-231b80a24ae4",
+			"headers": "Accept: application/json\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3333/messages",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1619090437662,
+			"name": "Send Message",
+			"description": "",
+			"collectionId": "7db369d9-f3cc-7658-dd81-62ae0fd6de19",
+			"responses": [],
+			"rawModeData": "{\n\t\"user_id\": \"4d7c270e-f857-414a-83bb-4f86af1a4479\",\n\t\"text\": \"Olá, em que posso ajuda!\"\n}"
+		},
+		{
+			"id": "d0aeabff-9452-a1ff-6491-f6ae29bf27cd",
+			"headers": "Accept: application/json\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3333/users",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1619090441361,
+			"name": "Create User",
+			"description": "",
+			"collectionId": "7db369d9-f3cc-7658-dd81-62ae0fd6de19",
+			"responses": [],
+			"rawModeData": "{\n\t\"email\": \"gdfgrr3rr@teste.com\"\n}"
+		},
+		{
+			"id": "dd0a4acc-c62b-01a1-dc13-940a143fdd65",
+			"headers": "Accept: application/json\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
 				{
 					"key": "Content-Type",
 					"value": "application/json",
@@ -34,12 +151,12 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1618934078172,
+			"time": 1619090442562,
 			"name": "CreateSettings",
 			"description": "",
 			"collectionId": "7db369d9-f3cc-7658-dd81-62ae0fd6de19",
 			"responses": [],
-			"rawModeData": "{\n\t\"chat\": true,\n\t\"username\": \"admin\"\n}"
+			"rawModeData": "{\n\t\"chat\": true,\n\t\"username\": \"chicowall3\"\n}"
 		}
 	]
 }
