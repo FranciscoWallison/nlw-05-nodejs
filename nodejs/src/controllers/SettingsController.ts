@@ -31,6 +31,39 @@ class SettingsController {
       return response.status(400).json({ message: err.message });
     }
   }
+
+  async findByUsername(request: Request, response: Response) {
+    const { username } = request.params;
+
+    const settingsService = new SettingsService();
+
+    try {
+      const setting = await settingsService.findByUsername(username);
+
+      return response.json(setting);
+    } catch (err) {
+      return response.status(400).json({ message: err.message, chat: false });
+    }
+
+    
+  }
+
+  async update(request: Request, response: Response) {
+    const { username } = request.params;
+    const { chat } = request.body;
+
+    const settingsService = new SettingsService();
+
+    try {
+      await settingsService.update(username, chat);
+
+      return response.send();
+    } catch (err) {
+      return response.status(400).json({ message: err.message });
+    }
+
+  }
+
 }
 
 export { SettingsController };

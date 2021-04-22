@@ -3,17 +3,107 @@
 	"name": "nlw-05-nodejs",
 	"description": "",
 	"order": [
-		"dd0a4acc-c62b-01a1-dc13-940a143fdd65",
 		"d0aeabff-9452-a1ff-6491-f6ae29bf27cd",
-		"c95504c2-23ec-47f7-d48c-231b80a24ae4",
 		"c28f5703-682e-dc6b-7e99-fb5523153b0c"
 	],
-	"folders": [],
-	"folders_order": [],
+	"folders": [
+		{
+			"name": "Settings",
+			"description": "",
+			"collectionId": "7db369d9-f3cc-7658-dd81-62ae0fd6de19",
+			"order": [
+				"c95504c2-23ec-47f7-d48c-231b80a24ae4",
+				"bb3d85ca-d046-f6d3-c343-5640394d9187",
+				"20b78ae2-34f6-3488-48cc-1b14975d606a",
+				"dd0a4acc-c62b-01a1-dc13-940a143fdd65"
+			],
+			"owner": "2500282",
+			"folders_order": [],
+			"id": "c167a8c7-5c24-2308-0cf0-c88c0a6fda49"
+		}
+	],
+	"folders_order": [
+		"c167a8c7-5c24-2308-0cf0-c88c0a6fda49"
+	],
 	"timestamp": 1618933936998,
 	"owner": "2500282",
 	"public": false,
 	"requests": [
+		{
+			"id": "20b78ae2-34f6-3488-48cc-1b14975d606a",
+			"headers": "Accept: application/json\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3333/settings/admin",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1619112855573,
+			"name": "Update Settings",
+			"description": "",
+			"collectionId": "7db369d9-f3cc-7658-dd81-62ae0fd6de19",
+			"responses": [],
+			"rawModeData": "{\n\t\"chat\": false\n}"
+		},
+		{
+			"id": "bb3d85ca-d046-f6d3-c343-5640394d9187",
+			"headers": "Accept: application/json\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3333/settings/admin",
+			"folder": "c167a8c7-5c24-2308-0cf0-c88c0a6fda49",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1619110937649,
+			"name": "Get open Settings",
+			"description": "",
+			"collectionId": "7db369d9-f3cc-7658-dd81-62ae0fd6de19",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "bb3d85ca-d046-f6d3-c343-5640394d9187",
+			"rawModeData": "{\n\t\"chat\": false\n}"
+		},
 		{
 			"id": "c28f5703-682e-dc6b-7e99-fb5523153b0c",
 			"headers": "Accept: application/json\nContent-Type: application/json\n",
@@ -31,7 +121,7 @@
 					"enabled": true
 				}
 			],
-			"url": "http://localhost:3333/messages/4d7c270e-f857-414a-83bb-4f86af1a4479",
+			"url": "http://localhost:3333/messages/329f8458-0806-4f91-ab3e-fbcc680a3c9c",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -43,7 +133,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1619090436661,
+			"time": 1619113070495,
 			"name": "List Messages By User",
 			"description": "",
 			"collectionId": "7db369d9-f3cc-7658-dd81-62ae0fd6de19",
@@ -79,12 +169,12 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1619090437662,
+			"time": 1619113055585,
 			"name": "Send Message",
 			"description": "",
 			"collectionId": "7db369d9-f3cc-7658-dd81-62ae0fd6de19",
 			"responses": [],
-			"rawModeData": "{\n\t\"user_id\": \"4d7c270e-f857-414a-83bb-4f86af1a4479\",\n\t\"text\": \"Olá, em que posso ajuda!\"\n}"
+			"rawModeData": "{\n\t\"user_id\": \"329f8458-0806-4f91-ab3e-fbcc680a3c9c\",\n\t\"text\": \"Olá, o que posso ajudar!\",\n\t\"admin_id\": \"3e51b171-95a2-4e66-bf58-78ea6c6a817d\"\n}"
 		},
 		{
 			"id": "d0aeabff-9452-a1ff-6491-f6ae29bf27cd",
@@ -151,12 +241,12 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1619090442562,
-			"name": "CreateSettings",
+			"time": 1619112856544,
+			"name": "Create Settings",
 			"description": "",
 			"collectionId": "7db369d9-f3cc-7658-dd81-62ae0fd6de19",
 			"responses": [],
-			"rawModeData": "{\n\t\"chat\": true,\n\t\"username\": \"chicowall3\"\n}"
+			"rawModeData": "{\n\t\"chat\": true,\n\t\"username\": \"admin\"\n}"
 		}
 	]
 }

@@ -1,5 +1,5 @@
 import request from 'supertest';
-import { app } from '../../../src/app';
+import { http } from '../../../src/http';
 import {connection} from '../../../src/database'
 import { SettingsRepository } from '../../../src/repositories/SettingsRepository'
 
@@ -13,7 +13,7 @@ describe('Users', () => {
   });
 
   it('Validar campos vazios Settings', async () => {
-    const response = await request(app).post('/settings').send({
+    const response = await request(http).post('/settings').send({
       chat: '',
       username: '',
     });
@@ -27,7 +27,7 @@ describe('Users', () => {
       chat: true,
       username: 'admin',
     }
-    const response = await request(app).post('/settings').send(setting);
+    const response = await request(http).post('/settings').send(setting);
     expect(response.status).toBe(200);
 
     const settingsRepository = (await connection).getCustomRepository(SettingsRepository);

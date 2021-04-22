@@ -1,3 +1,4 @@
-import { app } from './app';
+import { http } from './http';
+import './websocket/client';
 
-app.listen(3333, () => console.log('Server is running on 3333!'));
+http.listen(3333, () => console.log('Server is running on 3333!'));
