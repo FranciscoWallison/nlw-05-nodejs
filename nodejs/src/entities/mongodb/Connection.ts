@@ -24,7 +24,6 @@ import {
     @Column('varchar', {
       nullable: true
     })
-    @Column()
     admin_id: string;
   
     @Column()

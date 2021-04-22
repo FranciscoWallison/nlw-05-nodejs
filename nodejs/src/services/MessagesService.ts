@@ -39,6 +39,16 @@ class MessagesService {
   }
 
   async listByUser(user_id: string) {
+
+    let id = user_id;
+    const userExists = await (await connection).getCustomRepository(UsersRepository)
+    .findOne({ id } as any);
+
+    if (!(userExists)) {
+      throw new Error('User not exists.');
+    }
+
+
     const list = await (await connection).getCustomRepository(MessagesRepository).find({
       where: { user_id },
       relations: ['user'],

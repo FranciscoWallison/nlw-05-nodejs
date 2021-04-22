@@ -35,6 +35,16 @@ class SettingsController {
   async findByUsername(request: Request, response: Response) {
     const { username } = request.params;
 
+    const schema = Yup.object().shape({
+      username: Yup.string().required()
+    });
+
+    try {
+      await schema.validate(request.params, { abortEarly: false });
+    } catch (error) {
+      throw new AppError(error);
+    }
+
     const settingsService = new SettingsService();
 
     try {
@@ -51,6 +61,21 @@ class SettingsController {
   async update(request: Request, response: Response) {
     const { username } = request.params;
     const { chat } = request.body;
+
+    const schema_params = Yup.object().shape({
+      username: Yup.string().required(),
+    });
+
+    const schema_body = Yup.object().shape({
+      chat: Yup.boolean().required(),
+    });
+
+    try {
+      await schema_params.validate(request.params, { abortEarly: false });
+      await schema_body.validate(request.body, { abortEarly: false });
+    } catch (error) {
+      throw new AppError(error);
+    }
 
     const settingsService = new SettingsService();
 

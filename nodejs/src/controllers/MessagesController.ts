@@ -9,7 +9,6 @@ class MessagesController {
     const { admin_id, user_id, text } = request.body;
 
     const schema = Yup.object().shape({
-      // admin_id: Yup.string().required(),
       user_id: Yup.string().required(),
       text: Yup.string().required(),
     });
@@ -19,8 +18,6 @@ class MessagesController {
     } catch (error) {
       throw new AppError(error);
     }
-
-
 
     const messagesService = new MessagesService();
     try {
@@ -38,9 +35,15 @@ class MessagesController {
 
     const messagesService = new MessagesService();
 
-    const messages = await messagesService.listByUser(id);
+    try {
+      const messages = await messagesService.listByUser(id);
 
-    return response.json(messages);
+      return response.json(messages);
+    } catch (err) {
+      return response.status(400).json({ message: err.message });
+    }
+
+  
   }
 }
 

@@ -1,4 +1,5 @@
 import {connection}  from  '../database';
+import { AppError } from '../errors/AppError';
 
 import { ConnectionsRepository } from '../repositories/ConnectionsRepository';
 
@@ -15,7 +16,9 @@ class ConnectionsService {
   }
 
   async create({ socket_id, user_id, admin_id, id }: IConnectionCreate) {
-    const connection_message = (await connection).getCustomRepository(ConnectionsRepository)
+
+    try {
+      const connection_message = (await connection).getCustomRepository(ConnectionsRepository)
       .create({
         socket_id,
         user_id,
@@ -23,8 +26,12 @@ class ConnectionsService {
         id,
       } as any );
 
-    await (await connection).getCustomRepository(ConnectionsRepository)
-      .save(connection_message);
+      await (await connection).getCustomRepository(ConnectionsRepository)
+        .save(connection_message);
+    } catch (error) {
+      throw new AppError(error);
+    }
+   
   }
 
   async findByUserId(user_id: string) {
