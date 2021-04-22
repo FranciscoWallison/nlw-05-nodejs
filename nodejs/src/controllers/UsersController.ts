@@ -8,21 +8,23 @@ class UsersController {
     const { email } = request.body;
 
     const schema = Yup.object().shape({
-        email: Yup.string()
+      email: Yup.string()
             .email().required(),
     });
   
-      try {
-        await schema.validate(request.body, { abortEarly: false });
-      } catch (error) {
-        throw new AppError(error);
-      }
-
+    try {
+      await schema.validate(request.body, { abortEarly: false });
+    } catch (error) {
+      throw new AppError(error);
+    }
+    
     const usersService = new UsersService();
-
-    const user = await usersService.create(email);
-
-    return response.json(user);
+    try {
+      const user = await usersService.create(email);
+      return response.json(user);
+    } catch (err) {
+      return response.status(400).json({ message: err.message });
+    }
   }
 }
 

@@ -106,7 +106,7 @@ module.exports =
         "password": "root",
         "database": "database_nlw",
         "entities": [
-            process.env.TYPE_ORM_ENTITIES_DIR, 
+            process.env.MONGODB_TYPE_ORM_ENTITIES_DIR, 
         ],
         "synchronize": true,
         "logging": true,
@@ -126,7 +126,7 @@ module.exports =
         "password": "root",
         "database": "database_nlw_test",
         "entities": [
-            process.env.TYPE_ORM_ENTITIES_DIR, 
+            process.env.MONGODB_TYPE_ORM_ENTITIES_DIR, 
         ],
         "synchronize": true,
         "logging": true,

@@ -1,6 +1,7 @@
 import {connection}  from  '../database';
 
 import { MessagesRepository } from '../repositories/MessagesRepository';
+import { UsersRepository } from '../repositories/UsersRepository';
 
 interface IMessageCreate {
   admin_id?: string;
@@ -20,6 +21,13 @@ class MessagesService {
       text: text
     }
 
+    let id = user_id;
+    const userExists = await (await connection).getCustomRepository(UsersRepository)
+                                            .findOne({ id } as any);
+
+    if (!(userExists)) {
+      throw new Error('User not exists.');
+    }
 
     const message = (await connection).getCustomRepository(MessagesRepository).create(
         message_request as any

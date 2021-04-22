@@ -1,17 +1,23 @@
 import {
     Entity, 
-    ObjectID, 
+    Generated, 
     ObjectIdColumn,
     CreateDateColumn,
     UpdateDateColumn,
+    PrimaryGeneratedColumn,
     Column} 
 from "typeorm";
 // @PrimaryGeneratedColumn('uuid')
-// import { v4 as uuidV4 } from 'uuid';
+import { v4 as uuidV4 } from 'uuid';
 @Entity('settings')
 class Setting {
+
     @ObjectIdColumn()
-    id: ObjectID;
+    id_setting: number;
+
+    @Column()
+    @Generated('uuid')
+    id: string;
 
     @Column()
     username: string;
@@ -25,9 +31,9 @@ class Setting {
     @UpdateDateColumn()
     updated_at: Date;
 
-    // constructor() {
-    //     if (!this.id) this.id = uuidV4();
-    // }
+    constructor() {
+        if (!this.id) this.id = uuidV4();
+    }
 }
   
 export { Setting };

@@ -1,15 +1,22 @@
 import {
   Entity, 
-  ObjectID, 
+  Generated, 
   ObjectIdColumn,
   CreateDateColumn,
-  Column} 
+  Column,
+  PrimaryGeneratedColumn
+} 
 from "typeorm";
-
+import { v4 as uuidV4 } from 'uuid';
 @Entity('users')
 class User {
+ 
   @ObjectIdColumn()
-  id: ObjectID;
+  id_user: number;
+
+  @Column()
+  @Generated('uuid')
+  id: string;
 
   @Column()
   email: string;
@@ -17,9 +24,9 @@ class User {
   @CreateDateColumn()
   created_at: Date;
 
-//   constructor() {
-//     if (!this.id) this.id = uuidV4();
-//   }
+  constructor() {
+    if (!this.id) this.id = uuidV4();
+  }
 }
 
 export { User };

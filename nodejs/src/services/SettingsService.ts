@@ -18,8 +18,6 @@ class SettingsService {
     
     const settingsAlreadyExists = await (await connection).getCustomRepository(SettingsRepository)
                                           .findOne(setting_request as any);
-                                   
-
     if (settingsAlreadyExists) {
       throw new Error('Settings already exists.');
     }

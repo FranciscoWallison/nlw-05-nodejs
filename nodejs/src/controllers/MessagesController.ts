@@ -19,13 +19,18 @@ class MessagesController {
     } catch (error) {
       throw new AppError(error);
     }
-      
+
+
 
     const messagesService = new MessagesService();
+    try {
+      const message = await messagesService.create({ admin_id, user_id, text });
 
-    const message = await messagesService.create({ admin_id, user_id, text });
+      return response.json(message);
+    } catch (err) {
+      return response.status(400).json({ message: err.message });
+    }
 
-    return response.json(message);
   }
 
   async showByUser(request: Request, response: Response): Promise<Response> {
