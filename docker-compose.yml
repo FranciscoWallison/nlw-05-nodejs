@@ -24,11 +24,11 @@ services:
       - TYPE_ORM_MIGRATIONS=./src/database/migrations/**.ts
       - TYPE_ORM_MIGRATIONS_DIR=./src/database/migrations
       # PARA OS DRIVE ENTRE sqlite, mysql E postgres
-      - TYPE_ORM_ENTITIES=./src/entities/*.ts
-      - TYPE_ORM_ENTITIES_DIR=./src/entities/**.ts
+      - TYPE_ORM_ENTITIES=./src/entities/sqlite_mysql_postgre/*.ts
+      - TYPE_ORM_ENTITIES_DIR=./src/entities/sqlite_mysql_postgre/**.ts
       # PARA O DRIVE mongodb
-      - MONGODB_TYPE_ORM_ENTITIES=./src/entities_mongodb/*.ts
-      - MONGODB_TYPE_ORM_ENTITIES_DIR=./src/entities_mongodb/**.ts
+      - MONGODB_TYPE_ORM_ENTITIES=./src/entities/mongodb/*.ts
+      - MONGODB_TYPE_ORM_ENTITIES_DIR=./src/entities/mongodb/**.ts
     depends_on: 
       - db_mysql
       - db_pg
