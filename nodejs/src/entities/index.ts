@@ -18,4 +18,11 @@ import {User as User_mongo} from './mongodb/User';
 
 const User = process.env.CONNECTION_DRIVE === 'mongodb' ? User_mongo : User_;
 
-export { Connection, Message, Setting, User };
+
+import {SurveyUser as SurveyUser_ } from './sqlite_mysql_postgre/SurveyUser';
+import {SurveyUser as SurveyUser_mongo} from './mongodb/SurveyUser';
+
+const SurveyUser = process.env.CONNECTION_DRIVE === 'mongodb' ? SurveyUser_mongo : SurveyUser_;
+
+
+export { Connection, Message, Setting, User, SurveyUser };

@@ -8,6 +8,12 @@ html {
 body {
   background: #ffffff;
 }
+span{
+  color: #fff
+}
+strong{
+  color: #fff
+}
 
 .btn_support {
   float: right;
@@ -42,12 +48,10 @@ body {
 
 .in_support_header {
   float: right;
-  width: 320px;
+  width: 400px;
   height: 56px;
-
   background: #8257e6;
   border-radius: 16px 16px 0px 0px;
-
   display: flex;
   justify-content: space-between;
 }
@@ -66,9 +70,10 @@ body {
 
 .chat_support {
   position: absolute;
-  max-width: 330px;
+  max-width: 410px;
   right: 10px;
   animation: up 1s;
+  bottom: 30px;
 }
 
 .chat_support_hide {
@@ -174,16 +179,13 @@ body {
 }
 
 .text_help textarea {
-  width: 290px;
+  width: 360px;
   height: 115px;
-
   padding: 10px;
-
   background: #ffffff;
   border: 1px solid #dddddd;
   box-sizing: border-box;
   border-radius: 4px;
-
   resize: none;
 }
 
@@ -198,7 +200,7 @@ body {
   box-sizing: border-box;
   border-radius: 4px;
   height: 42px;
-  width: 290px;
+  width: 360px;
 }
 
 input[type="text"]:focus {
@@ -221,9 +223,18 @@ input[type="text"]:focus {
 }
 
 .btn_cancel {
-  border: 0;
-  cursor: pointer;
-  margin-right: 10px;
+    width: 121px;
+    height: 40px;
+    background: #8257e69c;
+    border-radius: 4px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-right: 5%;
+}
+
+.btn_cancel:hover {
+  opacity: 0.8;
 }
 
 .button {
@@ -246,4 +257,56 @@ input[type="text"]:focus {
 .date {
   text-align: right;
   font-size: 1px;
+}
+
+
+.container {
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+}
+.container:hover{
+  cursor: pointer;
+  box-shadow: rgb(130 87 230) 0px 0px 0px 2px inset;
+}
+    
+
+.value {
+  padding: 10px;
+  margin: 8px;
+  background: #8257e6;
+  color: #fff;
+  border-radius: 2px;
+  width: 35px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.value:hover {
+  opacity: 0.9;
+}
+
+.level {
+  display: flex;
+  margin: 8px;
+  justify-content: space-between;
+  width: 371px;
+}
+
+.text-chat{
+  color: #8257e6;
+}
+
+.close-medu:hover{
+  color: #fff!important;
+  border-radius: 5px !important;
+  background: #8257e6!important;
+}
+.answers {
+  width: 520px;
+  display: flex;
+  justify-content: space-between;
 }

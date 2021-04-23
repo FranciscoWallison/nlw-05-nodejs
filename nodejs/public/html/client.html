@@ -1,134 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
-    <title></title>
-    <link rel="stylesheet" href="/css/styles.css" />
-  </head>
-  <body>
-    <div class="chat chat_support" id="chat_in_support">
-      <div class="in_support_header">
-        <span>Em suporte ... </span>
-        <div class="icon_close" onclick="closeChat();">
-          <img src="/images/close.png" />
-        </div>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+    rel="stylesheet"
+  />
+  <title></title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content" style="background-color: #f0f8ff00;">
+      <div class="w3-container container" style="background: linear-gradient(to left, rgb(45, 38, 74), rgb(32, 32, 36));">
+        <span style="color: #fff;" onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright close-medu">&times;</span>
+        
+        <strong>O que você achou do projeto?</strong>
 
-      <div class="text_support">
-        <script id="email-template" type="text/template">
-          <div class="client">
-            <span class="name">{{email}}</span>
-        </script>
-        <script id="message-user-template" type="text/template">
-            <span class="client message">
-              {{message}}
-              <!-- <label class="date">{{date}}</label> -->
-            </span>
-          </div>
-        </script>
-        <script id="admin-template" type="text/template">
-          <div class="admin">
-            <span class="admin_name">Atendente</span>
-            <span class="admin message"> {{message_admin}} </span>
+        <div class="level">
+          <span>Pouco provável</span>
+          <span>Muito provável</span>
+        </div>
+      
+        <div class="answers" id="answers">
+         
+        </div>
+      
+        <br/>
+        <br/>
+      
+        <strong>Sua opinião é muito importante para min</strong>
+        <h3>Equie | <strong>NLW, muito obrigado!</strong></h3>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="chat chat_support" id="chat_in_support">
+    <div class="in_support_header">
+      <span>Em suporte ... </span>
+      <div class="icon_close" onclick="closeChatIn();">
+        <img src="/images/close.png" />
+      </div>
+    </div>
+
+    <div class="text_support">
+      <script id="email-template" type="text/template">
+        <div class="client">
+          <span class="name">{{email}}</span>
+      </script>
+      <script id="message-user-template" type="text/template">
+          <span class="client message">
+            {{message}}
             <!-- <label class="date">{{date}}</label> -->
-          </div>
-        </script>
-        <div id="messages" class="chat__messages"></div>
-        <!-- <div class="line"></div> -->
-      </div>
-      <div class="message_send">
-        <input
-          type="text"
-          placeholder="Digite sua mensagem aqui"
-          id="message_user"
-        />
-        <div class="send_message_button" id="send_message_button">
-          <img src="/images/send.png" />
+          </span>
         </div>
+      </script>
+      <script id="admin-template" type="text/template">
+        <div class="admin">
+          <span class="admin_name">Atendente</span>
+          <span class="admin message"> {{message_admin}} </span>
+          <!-- <label class="date">{{date}}</label> -->
+        </div>
+      </script>
+      <div id="messages" class="chat__messages"></div>
+      <!-- <div class="line"></div> -->
+    </div>
+    <div class="message_send">
+      <input
+        type="text"
+        placeholder="Digite sua mensagem aqui"
+        id="message_user"
+      />
+      <div class="send_message_button" id="send_message_button">
+        <img src="/images/send.png" />
+      </div>
+      <!-- <button class="btn_cancel">Click Me</button> -->
+    </div>
+  </div>
+
+  <div class="chat chat_support" id="chat_help">
+    <div class="in_support_header">
+      <span>Iniciar um chat de suporte</span>
+      <div class="icon_close" onclick="closeChat();">
+        <img src="/images/close.png" />
       </div>
     </div>
-
-    <div class="chat chat_support" id="chat_help">
-      <div class="in_support_header">
-        <span>Iniciar um chat de suporte</span>
-        <div class="icon_close" onclick="closeChat();">
-          <img src="/images/close.png" />
-        </div>
+    <div class="text_support text_help">
+      <div class="text_help">
+        <span class="text-chat">Como podemos te ajudar?</span>
+        <textarea
+          name="txt_help"
+          id="txt_help"
+          cols="30"
+          rows="10"
+          onkeydown="keyUpTextHelp(event)"
+          maxlength="250"
+        ></textarea>
+        <span class="charac_remaining">
+          <label id="charac_remaining">250</label> caracteres restantes</span
+        >
       </div>
-      <div class="text_support text_help">
-        <div class="text_help">
-          <span>Como podemos te ajudar?</span>
-          <textarea
-            name="txt_help"
-            id="txt_help"
-            cols="30"
-            rows="10"
-            onkeydown="keyUpTextHelp(event)"
-            maxlength="250"
-          ></textarea>
-          <span class="charac_remaining">
-            <label id="charac_remaining">250</label> caracteres restantes</span
-          >
-        </div>
 
-        <div class="first_email">
-          <span>Seu e-mail</span>
-          <input type="text" name="" id="email" />
-        </div>
+      <div class="first_email">
+        <span class="text-chat">Seu e-mail</span>
+        <input type="text" name="" id="email" />
+      </div>
 
-        <div class="button">
-          <button class="btn_cancel">Cancelar</button>
-          <button class="btn_start_chat" id="start_chat">Iniciar chat</button>
-        </div>
+      <div class="button">
+        <button class="btn_cancel">Cancelar</button>
+        <button class="btn_start_chat" id="start_chat">Iniciar chat</button>
       </div>
     </div>
+  </div>
 
-    <div>
-      <button class="btn_support" id="btn_support" onclick="openChat();">
-        <img src="/images/chat.png" /> Suporte
-      </button>
-    </div>
-  </body>
+  <div>
+    <button class="btn_support" id="btn_support" onclick="openChat();">
+      <img src="/images/chat.png" /> Suporte
+    </button>
+  </div>
+</body>
 
-  <script>
-    onLoad();
-    const chat = document.getElementById("chat_help");
+<script>
+  onLoad();
+  const chat = document.getElementById("chat_help");
+  const chat_in = document.getElementById("chat_in_support");
+  
+  const support = document.getElementById("btn_support");
+  
 
-    function onLoad() {
-      fetch("http://localhost:3333/settings/admin").then((result) =>
-        result.json().then((response) => {
-          const buttonSupport = document.getElementById("btn_support");
-          if (!response.chat) {
-            buttonSupport.style.display = "none";
-          }
-        })
-      );
-    }
+  function onLoad() {
+    fetch("http://localhost:3333/settings/admin").then((result) =>
+      result.json().then((response) => {
+        const buttonSupport = document.getElementById("btn_support");
+        if (!response.chat) {
+          buttonSupport.style.display = "none";
+        }
+      })
+    );
+  }
 
-    function openChat() {
-      chat.style.display = "block";
-    }
+  function onAnswers(value, email) {
+    fetch(window.location.origin+'/answers/'+value+'?email='+email).then((result) =>
+      result.json().then((response) => {
+       
+      })
+    );
+  }
 
-    function closeChat() {
-      chat.style.display = "none";
-    }
 
-    function keyUpTextHelp(event) {
-      const charac_remaining = document.getElementById("charac_remaining");
-      const length_text = event.target.value.length;
-      charac_remaining.innerHTML = Number(250) - Number(length_text);
-    }
-  </script>
+  function openChat() {
+    chat.style.display = "block";
+    chat_in.style.display = "none";
+    support.style.display = "none";
+  }
 
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js"></script>
-  <script src="https://unpkg.com/mustache@latest"></script>
-  <script src="/js/chat.js"></script>
+  function closeChat() {
+    chat.style.display = "none";
+    chat_in.style.display = "none";
+    support.style.display = "flex";
+  }
+
+  function closeChatIn() {
+    chat.style.display = "none";
+    chat_in.style.display = "none";
+    support.style.display = "flex";
+    document.getElementById('id01').style.display='block'
+  }
+
+  
+
+  function keyUpTextHelp(event) {
+    const charac_remaining = document.getElementById("charac_remaining");
+    const length_text = event.target.value.length;
+    charac_remaining.innerHTML = Number(250) - Number(length_text);
+  }
+</script>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js"></script>
+<script src="https://unpkg.com/mustache@latest"></script>
+<script src="/js/chat.js"></script>
 </html>
