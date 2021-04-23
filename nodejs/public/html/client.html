@@ -22,8 +22,8 @@
         <strong>O que você achou do projeto?</strong>
 
         <div class="level">
-          <span>Pouco provável</span>
-          <span>Muito provável</span>
+          <span>Razoável</span>
+          <span>Muito Bom</span>
         </div>
       
         <div class="answers" id="answers">
@@ -34,7 +34,9 @@
         <br/>
       
         <strong>Sua opinião é muito importante para min</strong>
-        <h3>Equie | <strong>NLW, muito obrigado!</strong></h3>
+        <h3 style="
+        color: #8257e6;
+    " >Equie | <strong>NLW, muito obrigado!</strong></h3>
       </div>
     </div>
   </div>
@@ -48,22 +50,35 @@
       </div>
     </div>
 
-    <div class="text_support">
-      <script id="email-template" type="text/template">
-        <div class="client">
-          <span class="name">{{email}}</span>
-      </script>
+    <div class="text_support" id="text_support">
       <script id="message-user-template" type="text/template">
-          <span class="client message">
-            {{message}}
-            <!-- <label class="date">{{date}}</label> -->
-          </span>
+          <span class="email-client">{{email}}</span>
+          <div style="
+           background: #9e9e9e6e;
+            border-radius: 0px 4px 4px 0px;
+            padding: 10px;
+            margin-left: 12px;
+            border: 0px solid #6f5eab;
+        ">
+            <span class="client_message_add">
+              {{message}}
+              <!-- <label class="date">{{date}}</label> -->
+            </span>
+          </div>
         </div>
       </script>
       <script id="admin-template" type="text/template">
         <div class="admin">
-          <span class="admin_name">Atendente</span>
-          <span class="admin message"> {{message_admin}} </span>
+          <span class="admin_name">{{atendente}}</span>
+          <div style="
+            background: #7129d2; 
+            border-radius: 4px 0px 0px 4px; 
+            padding: 10px; 
+            margin-left: 12px;
+          ">
+            <span class="admin_message_return"> {{{message_admin}}} </span>
+          </div>
+         
           <!-- <label class="date">{{date}}</label> -->
         </div>
       </script>
@@ -147,7 +162,7 @@
   function onAnswers(value, email) {
     fetch(window.location.origin+'/answers/'+value+'?email='+email).then((result) =>
       result.json().then((response) => {
-       
+        document.getElementById('id01').style.display='none';
       })
     );
   }

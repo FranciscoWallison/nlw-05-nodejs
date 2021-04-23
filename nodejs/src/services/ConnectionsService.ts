@@ -1,5 +1,6 @@
 import {connection}  from  '../database';
 import { AppError } from '../errors/AppError';
+import { Connection } from '../entities';
 
 import { ConnectionsRepository } from '../repositories/ConnectionsRepository';
 
@@ -39,6 +40,35 @@ class ConnectionsService {
       .findOne({ user_id } as any );
 
     return connection_message;
+  }
+
+  async findAllWithoutAdmin() {
+    const connections = (await connection).getCustomRepository(ConnectionsRepository).find({
+      where: {
+        admin_id: null,
+      },
+      relations: ['user'],
+    });
+
+    return connections;
+  }
+
+  async findBySocketID(socket_id: string) {
+    const connection_socket = (await connection).getCustomRepository(ConnectionsRepository)
+                              .findOne({ socket_id } as any);
+
+    return connection_socket;
+  }
+
+  async updateAdminID(user_id: string, admin_id: string) {
+    await (await connection).getCustomRepository(ConnectionsRepository)
+      .createQueryBuilder()
+      .update(Connection)
+      .set({ admin_id } as any)
+      .where('user_id = :user_id', {
+        user_id,
+      })
+      .execute();
   }
 }
 

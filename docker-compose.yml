@@ -13,6 +13,7 @@ services:
       - nlw-app-network
     ports:
       - "3333:3333"
+      - "80:80"
     volumes:       
       - ./nodejs:/src/app
     working_dir: /src/app

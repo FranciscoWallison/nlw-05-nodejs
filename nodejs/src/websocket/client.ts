@@ -50,5 +50,50 @@ io.on('connect', (socket) => {
       text,
       user_id,
     });
+
+    const allMessages = await messagesService.listByUser(user_id);
+    socket.emit('client_list_all_messages', allMessages);
+
+    const allUsers = await connectionsService.findAllWithoutAdmin();
+    io.emit('admin_list_all_users', allUsers);
+  });
+
+  socket.on('client_send_to_admin', async params => {
+    const { text, socket_admin_id } = params;
+
+    const socket_id = socket.id;
+
+    const { user_id } = await connectionsService.findBySocketID(socket_id) as any;
+
+    const message = await messagesService.create({
+      text,
+      user_id,
+    });
+console.log('client_send_to_admin', text);
+    io.to(socket_admin_id).emit('admin_receive_message', {
+      message,
+      socket_id,
+    });
+
+    let text_bot = `
+        No momento estamos ocupados!! <br>
+        1 - Saber mais sobre nlw <br>
+        2 - Sobre o projeto
+      `
+
+    if(socket_admin_id === null){
+      if(text === "1"){
+        text_bot ='<a href="https://nextlevelweek.com/" target="_blank">Sobre a NLW<a/>';
+      }
+
+      if(text === "2"){
+        text_bot = '<a href="https://github.com/FranciscoWallison/nlw-05-nodejs" target="_blank">GitHub/FranciscoWallison/nlw-05-nodejs<a/>';
+      }
+      io.to(socket_id).emit('admin_send_to_client', {
+        text: text_bot,
+        socket_id: null,//
+      });
+    }
+   
   });
 });

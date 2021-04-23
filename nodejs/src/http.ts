@@ -19,6 +19,11 @@ app.get('/pages/client', (req, res) => {
   return res.render('html/client.html');
 });
 
+app.get('/pages/admin', (req, res) => {
+  //validar quem entra
+  return res.render('html/admin.html');
+});
+
 const http = createServer(app); //Criando protocolo http
 const io = new Server(http); //Criando protocolo ws
 
