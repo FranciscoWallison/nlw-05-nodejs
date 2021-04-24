@@ -15,6 +15,6 @@ RUN npm install -g nodemon
 ADD . /src/app
 RUN yarn install
 EXPOSE $PORT
-# EXPOSE $PORT
+EXPOSE $PORT
 
-# ENTRYPOINT ["yarn", "prod"]
+ENTRYPOINT ["yarn", "prod"]
