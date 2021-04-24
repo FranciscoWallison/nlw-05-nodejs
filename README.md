@@ -66,14 +66,14 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## CI/CD
 #### Pipeline
-[Link do Artigo Jenkins](https://nlw-05-nodejs.herokuapp.com/pages/client)
+[Link do Artigo Jenkins](https://github.com/FranciscoWallison/Desenvolvimento-de-aplicacoes-com-Microsservicos/tree/master/Devops/JENKINS)
 ![jenkis](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/master/inforFiles/jenkis.png)
-[Link do Artigo SonarQube](https://nlw-05-nodejs.herokuapp.com/pages/client)
-[Link Heroku](https://nlw-05-nodejs.herokuapp.com/pages/client)
+[Link do Artigo SonarQube](https://github.com/FranciscoWallison/Desenvolvimento-de-aplicacoes-com-Microsservicos/tree/master/Devops/SonarQube)
+![SonarQube](https://github.com/FranciscoWallison/Desenvolvimento-de-aplicacoes-com-Microsservicos/blob/master/Devops/SonarQube/fotos/sonar_dashboard.pngg)
 
-### Repo
+
+### Deploy
 [Link Heroku](https://nlw-05-nodejs.herokuapp.com/pages/client)
-![deliveri](https://github.com/FranciscoWallison/nlw-05-nodejs/blob/master/inforFiles/ltimoDelivere.png) 
 
 ## OBS: 
 #### 1 Lembrar de abrir o bash e instalar o "npm install".
