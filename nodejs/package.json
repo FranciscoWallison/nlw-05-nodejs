@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
-    "prod": "ts-node-dev --transpile-only --ignore-watch NODE_ENV=production node_modules src/server.ts",
+    "prod": "yarn typeorm migration:run -c \"$CONNECTION_DRIVE\" && ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts ",
     "dev-mr": "yarn typeorm migration:run -c \"$CONNECTION_DRIVE\" && ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts ",
     "typeorm-mc": "yarn typeorm migration:create -c \"$CONNECTION_DRIVE\" -n",
     "typeorm-mr": "yarn typeorm migration:run -c \"$CONNECTION_DRIVE\"",

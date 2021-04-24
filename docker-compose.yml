@@ -1,6 +1,6 @@
 version: '3' # vs mais atual
 networks:
-  nlw-app-network:
+  nlw-network:
     driver: bridge
 services:             
 
@@ -10,11 +10,9 @@ services:
     restart: always
     tty: true
     networks:
-      - nlw-app-network
+      - nlw-network
     ports:
       - "3333:3333"
-      - "80:80"
-      - "8080:8080"
     volumes:       
       - ./nodejs:/src/app
     working_dir: /src/app
@@ -44,8 +42,21 @@ services:
       -  "9000:9000"
       -  "9092:9092"
     networks:
-      - nlw-app-network
-        
+      - nlw-network
+
+  jenkins:
+    build: jenkins
+    privileged: true
+    user: root
+    ports:
+      - 8080:8080
+      - 50000:50000
+    container_name: jenkins
+    volumes:
+      - ./jenkins/jenkins_home:/var/jenkins_home
+    networks:
+      - nlw-network
+  
   # CONFIGURAÇÕES MYSQL
   db_mysql:
     container_name: db_mysql
@@ -62,7 +73,7 @@ services:
       - MYSQL_DATABASE=database_nlw
       - MYSQL_ROOT_PASSWORD=root
     networks:
-      - nlw-app-network
+      - nlw-network
   
   # CONFIGURAÇÕES POSTGRES
   db_pg:
@@ -80,7 +91,7 @@ services:
       - POSTGRES_PASSWORD=postgres
       - PGPORT=5432
     networks:
-      - nlw-app-network
+      - nlw-network
   
   db_mongodb:
     container_name: db_mongodb
@@ -97,4 +108,4 @@ services:
       - ./dbs/init/init-mongo.js:/docker-entrypoint-initdb.d/*.js
       - ./dbs/mongo/dbdata:/data/db
     networks:
-      - nlw-app-network
+      - nlw-network

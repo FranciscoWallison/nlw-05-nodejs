@@ -1,0 +1,118 @@
+pipeline {
+    environment {
+        REGISTRY = "chicowall"
+        registryCredential = 'dockerhubcredentialse'
+        dockerImage = ''
+    }
+
+
+    agent any
+    stages {
+            stage('[GitClone] Preparando a bagagem.') {
+                steps {
+                    git url: 'https://github.com/FranciscoWallison/nlw-05-nodejs.git'
+                }
+            }
+
+            stage('[BuildDockerCompose] Revisando os motores.') {
+                steps {
+                    sh (
+                        script: 'docker-compose -f "docker-compose.yml" down',
+                        returnStatus: true
+                    )
+                }
+            }
+
+            stage('[BuildDockerCompose] Embarcando os Astronautas.') {
+                steps {
+                    sh (
+                        script: "docker-compose up -d",
+                        returnStatus: true
+                    )
+                }
+            }
+
+            stage('[NpmInstall] Apertando os cintos.') {
+                steps {
+                    sh (
+                        script: 'docker exec -it nlw-04-nodejs npm install',
+                        returnStatus: true
+                    )
+                }
+            }
+
+            stage('[RunMigrations] Ligando os motores.') {
+                steps {
+                    sh (
+                        script: 'docker exec -it nlw-04-nodejs yarn typeorm migration:run',
+                        returnStatus: true
+                    )
+                }
+            }
+
+            stage('[YarnTest] Contagem Regressiva.') {
+                steps {
+                    sh (
+                        script: 'docker exec -it nlw-04-nodejs yarn test',
+                        returnStatus: true
+                    )
+                }
+            }
+
+            stage('[YarnTestCoverage] 5...') {
+                steps {
+                    sh (
+                        script: 'docker exec -it nlw-04-nodejs yarn test:coverage',
+                        returnStatus: true
+                    )
+                }
+            }
+
+
+            stage('[YarnSonar] 4...') {
+                steps {
+                    sh (
+                        script: 'docker exec -it nlw-04-nodejs yarn sonar',
+                        returnStatus: true
+                    )
+                }
+            }
+
+            stage('[OpenApp] 3...') {
+                steps {
+                    sh (
+                        script: 'cd nodejs',
+                        returnStatus: true
+                    )
+                }
+            }
+
+            stage('[BuldDockerImage] 2...') {
+                steps {
+                    sh (
+                        script: 'heroku container:push web --app nlw-05-nodejs',
+                        returnStatus: true
+                    )
+                }
+            }
+
+            stage('[DeployHeroku] 1...') {
+                steps {
+                    sh (
+                        script: 'heroku container:release web --app nlw-05-nodejs',
+                        returnStatus: true
+                    )
+                }        
+            }
+
+            stage('[Publish] 0...') {
+                steps {
+                    sh (
+                        script: 'heroku open --app nlw-05-nodejs',
+                        returnStatus: true
+                    )
+                }
+            }
+
+        }
+    }
