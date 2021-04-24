@@ -1,6 +1,6 @@
-# [NLW#5] Start Project NodeJs e ...Docker, Docker-Compose, Jenkins, SonarQube Heroku, Sqlit, Mysql, Porstgres, mongodb,  Testing e CI/CD
+# [NLW#5] Start Project NodeJs e ...Docker, Docker-Compose, Jenkins, SonarQube Heroku, Sqlit, Mysql, Porstgres, Mongodb,  Testing e CI/CD
 
-<img src="https://github.com/FranciscoWallison/nlw-05-nodejs/blob/master/nodejs/public/images/nlw5-1.jpg" width="350" />
+<img src="https://github.com/FranciscoWallison/nlw-05-nodejs/blob/master/nodejs/public/images/nlw5-1.jpg" width="900" />
 
 
 
@@ -66,11 +66,13 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## CI/CD
 #### Pipeline
-![jenkis](https://github.com/FranciscoWallison/nlw-05-nodejs/blob/master/inforFiles/jenkis.png)
-#### Testing sqlite, mysql e postgres
-![sqlite](https://github.com/FranciscoWallison/nlw-05-nodejs/blob/master/inforFiles/test_sqlit.png) ![mysql](https://github.com/FranciscoWallison/nlw-05-nodejs/blob/master/inforFiles/test_mysql.png) ![jenkis](https://github.com/FranciscoWallison/nlw-05-nodejs/blob/master/inforFiles/test_postgres.png)
+[Link do Artigo Jenkins](https://nlw-05-nodejs.herokuapp.com/pages/client)
+![jenkis](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/master/inforFiles/jenkis.png)
+[Link do Artigo SonarQube](https://nlw-05-nodejs.herokuapp.com/pages/client)
+[Link Heroku](https://nlw-05-nodejs.herokuapp.com/pages/client)
+
 ### Repo
-[Link DockerHub](https://hub.docker.com/repository/docker/chicowall/nlw-05-nodejs/)
+[Link Heroku](https://nlw-05-nodejs.herokuapp.com/pages/client)
 ![deliveri](https://github.com/FranciscoWallison/nlw-05-nodejs/blob/master/inforFiles/ltimoDelivere.png) 
 
 ## OBS: 
