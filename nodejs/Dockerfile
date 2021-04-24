@@ -14,6 +14,7 @@ WORKDIR /src/app
 RUN npm install -g nodemon 
 ADD . /src/app
 RUN yarn install
-EXPOSE 3333 80 $PORT
+EXPOSE $PORT
+# EXPOSE 3333 80 $PORT
 
-ENTRYPOINT ["yarn", "dev"]
+# ENTRYPOINT ["yarn", "dev"]

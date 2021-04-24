@@ -14,6 +14,7 @@ services:
     ports:
       - "3333:3333"
       - "80:80"
+      - "8080:8080"
     volumes:       
       - ./nodejs:/src/app
     working_dir: /src/app
@@ -34,6 +35,16 @@ services:
       - db_mysql
       - db_pg
       - db_mongodb
+
+
+  sonarqube:
+    container_name: sonarqube
+    image:  sonarqube:8.3.1-enterprise
+    ports:
+      -  "9000:9000"
+      -  "9092:9092"
+    networks:
+      - nlw-app-network
         
   # CONFIGURAÇÕES MYSQL
   db_mysql:

@@ -10,7 +10,8 @@
     "typeorm-mc": "yarn typeorm migration:create -c \"$CONNECTION_DRIVE\" -n",
     "typeorm-mr": "yarn typeorm migration:run -c \"$CONNECTION_DRIVE\"",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
-    "test": "NODE_ENV=test jest -i --detectOpenHandles"
+    "test": "NODE_ENV=test jest -i --detectOpenHandles --coverage",
+    "sonar": "node sonar-project.js"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
@@ -36,8 +37,21 @@
     "mongodb": "^3.6.6",
     "mysql": "^2.18.1",
     "pg": "^8.6.0",
+    "sonarqube-scanner": "^2.8.0",
     "ts-jest": "^26.5.5",
     "ts-node-dev": "^1.1.6",
     "typescript": "^4.2.4"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "testResultsProcessor": "jest-sonar-reporter"
+  },
+  "jestSonar": {
+    "reportPath": "coverage",
+    "reportFile": "test-reporter.xml",
+    "indent": 4
   }
 }
