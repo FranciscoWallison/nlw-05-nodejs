@@ -69,7 +69,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 [Link do Artigo Jenkins](https://github.com/FranciscoWallison/Desenvolvimento-de-aplicacoes-com-Microsservicos/tree/master/Devops/JENKINS)
 ![jenkis](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/master/inforFiles/jenkis.png)
 [Link do Artigo SonarQube](https://github.com/FranciscoWallison/Desenvolvimento-de-aplicacoes-com-Microsservicos/tree/master/Devops/SonarQube)
-![SonarQube](https://github.com/FranciscoWallison/Desenvolvimento-de-aplicacoes-com-Microsservicos/blob/master/Devops/SonarQube/fotos/sonar_dashboard.pngg)
+![SonarQube](https://github.com/FranciscoWallison/Desenvolvimento-de-aplicacoes-com-Microsservicos/blob/master/Devops/SonarQube/fotos/sonar_dashboard.png)
 
 
 ### Deploy
