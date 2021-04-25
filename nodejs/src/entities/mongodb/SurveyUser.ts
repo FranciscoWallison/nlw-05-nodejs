@@ -21,11 +21,11 @@ class SurveyUser {
   @Generated('uuid')
   id: string;
 
-  @Column()
-  user_id: string;
-
-  @ManyToOne(() => User)
-  @JoinColumn({ name: 'user_id' })
+  @ManyToOne(type => User)
+  @JoinColumn({
+    name: "user_id",
+    referencedColumnName: "user_id"
+  })
   user: User;
   
   @Column('numeric', {
