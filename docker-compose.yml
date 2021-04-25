@@ -18,7 +18,7 @@ services:
     working_dir: /src/app
     environment:
       # ESCOLHA O SEU DRIVE ENTRE sqlite, mysql, postgres E mongodb
-      - CONNECTION_DRIVE=sqlite
+      - CONNECTION_DRIVE=mongodb
       # CONFIGURAÇÕES MIGRATIONS
       - TYPE_ORM_LOGGING=true     
       - TYPE_ORM_MIGRATIONS=./src/database/migrations/**.ts

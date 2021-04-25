@@ -61,14 +61,24 @@ class ConnectionsService {
   }
 
   async updateAdminID(user_id: string, admin_id: string) {
+
+    const connection_socket = await (await connection).getCustomRepository(ConnectionsRepository)
+                            .findOne({ user_id } as any);
+    
+    if(connection_socket === undefined)
+      throw new Error('Connection not exists.');
+
     await (await connection).getCustomRepository(ConnectionsRepository)
-      .createQueryBuilder()
-      .update(Connection)
-      .set({ admin_id } as any)
-      .where('user_id = :user_id', {
-        user_id,
-      })
-      .execute();
+      .update(connection_socket, { admin_id } as any);
+
+    // await (await connection).getCustomRepository(ConnectionsRepository)
+    //   .createQueryBuilder()
+    //   .update(Connection)
+    //   .set({ admin_id } as any)
+    //   .where('user_id = :user_id', {
+    //     user_id,
+    //   })
+    //   .execute();
   }
 }
 

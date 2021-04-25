@@ -56,7 +56,8 @@ public async up(queryRunner: QueryRunner): Promise<void> {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropForeignKey('connections', 'FKConnectionUser');
+        
         await queryRunner.dropTable('connections');
+        await queryRunner.dropForeignKey('connections', 'FKConnectionUser');
     }
 }

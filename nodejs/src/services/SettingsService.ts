@@ -1,6 +1,5 @@
 import {connection}  from  '../database';
 import { SettingsRepository } from '../repositories/SettingsRepository';
-import { Setting } from '../entities';
 
 interface ISettingsCreate {
   chat: boolean;
@@ -47,13 +46,16 @@ class SettingsService {
     
     if(settings === undefined)
       throw new Error('User not exists.');
-      
+    
     await (await connection).getCustomRepository(SettingsRepository)
-      .createQueryBuilder()
-      .update(Setting)
-      .set({ chat } as any)
-      .where('username = :username', { username })
-      .execute();
+      .update(settings, { chat } as any);
+      
+    // await (await connection).getCustomRepository(SettingsRepository)
+    //   .createQueryBuilder()
+    //   .update(settings)
+    //   .set({ chat } as any)
+    //   .where('username = :username', { username })
+    //   .execute();
   }
 
 }

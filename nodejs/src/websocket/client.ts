@@ -81,7 +81,7 @@ console.log('client_send_to_admin', text);
         2 - Sobre o projeto
       `
 
-    if(socket_admin_id === null){
+    if(socket_admin_id === null || socket_admin_id === undefined ){
       if(text === "1"){
         text_bot ='<a href="https://nextlevelweek.com/" target="_blank">Sobre a NLW<a/>';
       }

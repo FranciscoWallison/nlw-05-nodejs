@@ -10,7 +10,7 @@ import {
   import { ColumnNumericTransformer } from '../../database/transformer/ColumnNumericTransformer';
 
 
-  @Entity('surveys_users')
+@Entity('surveys_users')
   class SurveyUser {
     @PrimaryGeneratedColumn('uuid')
     readonly id: string;
@@ -18,8 +18,8 @@ import {
     @Column()
     user_id: string;
   
-    @ManyToOne(() => User)
     @JoinColumn({ name: 'user_id' })
+    @ManyToOne(() => User)
     user: User;
     
     @Column('numeric', {

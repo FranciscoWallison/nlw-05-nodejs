@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export class CreateSurveysUsers1614206369156 implements MigrationInterface {
+export class CreateSurveysUsers1619104193089 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
@@ -16,6 +16,7 @@ export class CreateSurveysUsers1614206369156 implements MigrationInterface {
           {
             name: 'user_id',
             type: 'varchar',
+            isNullable: true,
           },
           {
             name: 'value',
@@ -30,11 +31,11 @@ export class CreateSurveysUsers1614206369156 implements MigrationInterface {
         ],
         foreignKeys: [
           {
-            name: 'FKUser',
+            name: 'FKSurveysUser',
             referencedTableName: 'users',
             referencedColumnNames: ['id'],
             columnNames: ['user_id'],
-            onDelete: 'CASCADE',
+            onDelete: 'SET NULL',
             onUpdate: 'CASCADE',
           },
         ],

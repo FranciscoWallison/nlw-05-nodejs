@@ -43,7 +43,7 @@ function call(id) {
       const createDiv = document.createElement('div');
 
       //validar a mensagem do usuário
-      if (message.admin_id === null) {
+      if (message.admin_id === undefined || message.admin_id === null ) {
         createDiv.className = 'admin_message_client';
 
         createDiv.innerHTML = `<span>${connection.user.email} </span>`;

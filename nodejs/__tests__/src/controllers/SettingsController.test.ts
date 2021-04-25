@@ -3,7 +3,7 @@ import { http } from '../../../src/http';
 import {connection} from '../../../src/database'
 import { SettingsRepository } from '../../../src/repositories/SettingsRepository'
 
-describe('Users', () => {
+describe('Settings', () => {
   beforeAll(async () => {    
     const cn = await connection;
     await cn.dropDatabase();       

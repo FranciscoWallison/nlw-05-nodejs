@@ -42,7 +42,7 @@ document.querySelector('#start_chat').addEventListener('click', event => {
 
     messages.forEach(message => {
     
-      if (message.admin_id === null) {
+      if (message.admin_id === null || message.admin_id === undefined ) {
         const rendered = Mustache.render(template_client, {
           message: message.text,
           email,

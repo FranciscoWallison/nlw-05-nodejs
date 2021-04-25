@@ -1,10 +1,9 @@
 import request from 'supertest';
 import { http } from '../../../src/http';
 import {connection} from '../../../src/database'
-import { MessagesRepository }from '../../../src/repositories/MessagesRepository';
 import { UsersRepository }from '../../../src/repositories/UsersRepository';
 
-describe('Users', () => {
+describe('Messages', () => {
   beforeAll(async () => {    
     const cn = await connection;
     await cn.dropDatabase();       
