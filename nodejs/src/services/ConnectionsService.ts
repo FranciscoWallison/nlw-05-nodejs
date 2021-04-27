@@ -43,11 +43,14 @@ class ConnectionsService {
   }
 
   async findAllWithoutAdmin() {
-    const connections = (await connection).getCustomRepository(ConnectionsRepository).find({
+
+    // O relacionamento não esta retornando o objetos de cliente no mongoDB
+    const connections = await (await connection).getCustomRepository(ConnectionsRepository)
+    .find({
       where: {
         admin_id: null,
       },
-      relations: ['user'],
+     relations: ['user']
     });
 
     return connections;

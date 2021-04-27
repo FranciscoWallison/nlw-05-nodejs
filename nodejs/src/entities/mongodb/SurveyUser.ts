@@ -11,8 +11,7 @@ import { Survey } from './Survey';
 import { User } from './User';
 import { ColumnNumericTransformer } from '../../database/transformer/ColumnNumericTransformer';
 import { v4 as uuidV4 } from 'uuid';
-
-@Entity('surveys_users')
+@Entity()
 class SurveyUser {
   @ObjectIdColumn()
   id_survey: number;
@@ -21,12 +20,15 @@ class SurveyUser {
   @Generated('uuid')
   id: string;
 
-  @ManyToOne(type => User)
+  @Column()
+  user_id: string;
+
+  @ManyToOne(() => User, user => user.id)
   @JoinColumn({
     name: "user_id",
-    referencedColumnName: "user_id"
+    referencedColumnName: "id"
   })
-  user: User;
+  user: User[];
   
   @Column('numeric', {
     precision: 7,

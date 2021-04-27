@@ -9,7 +9,7 @@ import {
 from "typeorm";
 // @PrimaryGeneratedColumn('uuid')
 import { v4 as uuidV4 } from 'uuid';
-@Entity('settings')
+@Entity()
 class Setting {
 
     @ObjectIdColumn()

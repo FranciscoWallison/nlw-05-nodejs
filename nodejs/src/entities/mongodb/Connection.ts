@@ -7,12 +7,13 @@ import {
     Generated,
     UpdateDateColumn,
     ObjectIdColumn,
+    PrimaryColumn
   } from 'typeorm';
   import { v4 as uuidV4 } from 'uuid';
   
   import { User } from './User';
   
-  @Entity('connections')
+  @Entity()
   class Connection {
     @ObjectIdColumn()
     id_connection: number;
@@ -26,10 +27,13 @@ import {
     })
     admin_id: string;
 
+    @Column()
+    user_id?: string;
+
     @ManyToOne(type => User)
     @JoinColumn({
       name: "user_id",
-      referencedColumnName: "user_id"
+      referencedColumnName: "id"
     })
     user: User;
   

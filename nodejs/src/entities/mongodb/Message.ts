@@ -4,7 +4,7 @@ import {
     Entity,
     JoinColumn,
     ManyToOne,
-    // PrimaryColumn,
+    PrimaryColumn,
     ObjectIdColumn,
     Generated,
     PrimaryGeneratedColumn,
@@ -13,7 +13,7 @@ import { v4 as uuidV4 } from 'uuid';
   
 import { User } from './User';
   
-@Entity('messages')
+@Entity()
 class Message {
   @ObjectIdColumn()
   id_message: number;
@@ -27,10 +27,13 @@ class Message {
   })
   admin_id: string;
 
-  @ManyToOne(type => User)
+  @PrimaryColumn()
+  user_id?: string;
+
+  @ManyToOne(() => User, user => user.id)
   @JoinColumn({
     name: "user_id",
-    referencedColumnName: "user_id"
+    referencedColumnName: "id"
   })
   user: User;
 
