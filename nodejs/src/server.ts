@@ -2,4 +2,4 @@ import { http } from './http';
 import './websocket/client';
 import './websocket/admin';
 
-http.listen(3333);
+http.listen(process.env.PORT);

@@ -17,7 +17,8 @@ services:
       - ./nodejs:/src/app
     working_dir: /src/app
     environment:
-      # ESCOLHA O SEU DRIVE ENTRE sqlite, mysql, postgres E mongodb
+      - PORT=3333
+      # ESCOLHA O SEU DRIVE ENTRE sqlite, mysql, postgres E mongodb     
       - CONNECTION_DRIVE=sqlite
       # CONFIGURAÇÕES MIGRATIONS
       - TYPE_ORM_LOGGING=true     
