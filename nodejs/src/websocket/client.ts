@@ -69,7 +69,7 @@ io.on('connect', (socket) => {
       text,
       user_id,
     });
-console.log('client_send_to_admin', text);
+
     io.to(socket_admin_id).emit('admin_receive_message', {
       message,
       socket_id,
@@ -85,7 +85,6 @@ console.log('client_send_to_admin', text);
       if(text === "1"){
         text_bot ='<a href="https://nextlevelweek.com/" target="_blank">Sobre a NLW<a/>';
       }
-
       if(text === "2"){
         text_bot = '<a href="https://github.com/FranciscoWallison/nlw-05-nodejs" target="_blank">GitHub/FranciscoWallison/nlw-05-nodejs<a/>';
       }

@@ -2,5 +2,5 @@ projectKey=nlw-05-nodejs
 serverUrl=http://sonarqube:9000
 serverVersion=8.8.0.42792
 dashboardUrl=http://sonarqube:9000/dashboard?id=nlw-05-nodejs
-ceTaskId=AXkEIuj36eCu9XEY8eWW
-ceTaskUrl=http://sonarqube:9000/api/ce/task?id=AXkEIuj36eCu9XEY8eWW
+ceTaskId=AXlI-ARNFwdgdMji8WtZ
+ceTaskUrl=http://sonarqube:9000/api/ce/task?id=AXlI-ARNFwdgdMji8WtZ

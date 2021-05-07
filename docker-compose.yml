@@ -34,8 +34,7 @@ services:
       - db_mysql
       - db_pg
       - db_mongodb
-
-
+      
   sonarqube:
     container_name: sonarqube
     image:  sonarqube:latest
@@ -49,9 +48,9 @@ services:
     build: jenkins
     privileged: true
     user: root
-    ports:
-      - 8080:8080
+    ports:      
       - 50000:50000
+      - 8080:8080
     container_name: jenkins
     volumes:
       - ./jenkins/jenkins_home:/var/jenkins_home

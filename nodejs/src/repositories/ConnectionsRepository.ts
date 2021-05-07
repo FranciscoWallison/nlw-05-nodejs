@@ -1,4 +1,4 @@
-import { EntityRepository, Repository, MongoEntityManager, MongoRepository } from 'typeorm';
+import { EntityRepository, MongoRepository } from 'typeorm';
 
 import { Connection } from '../entities';
 

@@ -43,13 +43,9 @@ describe('Settings', () => {
 
 
   it('Validar Settings está ativo', async () => {
-    let setting = {
-      chat: true,
-      username: 'admin',
-    }
+
     const response = await request(http).get('/settings/admin');
     expect(response.status).toBe(200);
-
 
     const response_error = await request(http).get('/settings');
     expect(response_error.status).toBe(404);
@@ -65,7 +61,6 @@ describe('Settings', () => {
     }
     const response = await request(http).put('/settings/admin').send(setting);
     expect(response.status).toBe(200);
-
 
     const response_error = await request(http).put('/settings').send(setting);
     expect(response_error.status).toBe(404);
