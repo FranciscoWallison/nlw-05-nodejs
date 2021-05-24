@@ -75,6 +75,9 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ### Deploy
 [Link Heroku](https://nlw-05-nodejs.herokuapp.com/pages/client)
 
+![screenshot](https://github.com/FranciscoWallison/nlw-05-nodejs/blob/master/imgs/home.png)
+![screenshotbot](https://github.com/FranciscoWallison/nlw-05-nodejs/blob/master/imgs/bot_nlw.png)
+
 ## OBS: 
 #### 1 Lembrar de abrir o bash e instalar o "npm install".
 #### 2 Para estar selecionando os [DRIVES](https://github.com/FranciscoWallison/nlw-05-nodejs/blob/main/docker-compose.yml#L21).
