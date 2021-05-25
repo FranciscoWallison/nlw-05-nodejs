@@ -35,7 +35,7 @@
 * [:cyclone: CI/CD](#cicd)
 *  -[:artificial_satellite: Pipeline Jenkis](#pipeline)
 *  -[:white_check_mark: Testing sqlite, mysql , postgres, mongoDB](#testing-sqlite-mysql-e-postgres)
-*  -[:shopping_cart: Deliveri](#repo)
+*  -[:shopping_cart: Screenshot](#screenshot) 
 * [🦸 Observações e dicas para esta utilizando projeto.](#obs)
 
   
@@ -74,7 +74,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ### Deploy
 [Link Heroku](https://nlw-05-nodejs.herokuapp.com/pages/client)
-
+### Screenshot
 ![screenshot](https://github.com/FranciscoWallison/nlw-05-nodejs/blob/master/imgs/home.png)
 ![screenshotbot](https://github.com/FranciscoWallison/nlw-05-nodejs/blob/master/imgs/bot_nlw.png)
 
