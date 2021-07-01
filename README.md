@@ -84,7 +84,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 #### 3 O comando [yarn dev-mr](https://github.com/FranciscoWallison/nlw-05-nodejs/blob/main/nodejs/package.json#L10) ajudará a startar o projeto com as migrações.
 #### 4 O comando [yarn typeorm-mc](https://github.com/FranciscoWallison/nlw-05-nodejs/blob/main/nodejs/package.json#L11) ajudará a criar a migração na database selecionada. exemplo  ```typeorm-mc <DescriptionMigration>```.
 #### 5 Referencia utilizada para criar webhook com jenkins, github e dockerhub [aqui](https://medium.com/@naistangz/building-a-ci-cd-pipeline-for-a-node-js-app-with-docker-and-jenkins-ee6db6e70d25).
-#### 6 Possiveis erros e suas soluções [aqui](https://github.com/FranciscoWallison/nlw-05-nodejs#table-database_nlw_testsurveys-doesnt-exist).
+#### 6 Possíveis erros e suas soluções [aqui](https://github.com/FranciscoWallison/nlw-05-nodejs#table-database_nlw_testsurveys-doesnt-exist).
 
 _______
 ## Comandos básicos Docker e DOCKER-COMPOSE
