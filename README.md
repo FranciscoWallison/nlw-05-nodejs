@@ -6,7 +6,7 @@
 
   <h1 align="center">  NPS-API Net Promoter Score  </h1>
 
-  <p align="center">Projeto desenvolvido durante a 4° edição da NLW <a href"https://rocketseat.com.br/">na trilha de NODE JS</a> Da <a href"https://rocketseat.com.br/"> Rocketseat</a> . </p>
+  <p align="center">Projeto desenvolvido durante a 5° edição da NLW <a href"https://rocketseat.com.br/">na trilha de NODE JS</a> Da <a href"https://rocketseat.com.br/"> Rocketseat</a> . </p>
 
 <p align="center">
 
