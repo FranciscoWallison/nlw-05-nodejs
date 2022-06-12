@@ -44,9 +44,6 @@
 
 O <strong>NPS-API</strong> é uma Chat utilizando socket.io.
 
-Aplicação web construída na trilha <strong>NodeJS</strong> da <strong>Next Level Week</strong> distribuída pela [Rocketseat](https://rocketseat.com.br/).
-
-
 ## 🚀 Milhas Extras
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Typescript](https://www.typescriptlang.org/)
