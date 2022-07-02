@@ -95,6 +95,8 @@ _______
  - yarn typeorm migration:revert
 #### Criando migrations
  - yarn typeorm migration:create -n CreateUsers
+ 
+# Banco
 ## Comandos básicos SQLITE
 #### Install sqlite3 LINUX
 - sudo apt install sqlite3
