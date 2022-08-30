@@ -123,11 +123,6 @@ _______
 #### Lista todos as tabelas
 - show tables;
 
-# Testing continuous integration
-## Comandos básicos jenkins
-#### Primeiro acesso
-- cat /var/jenkins_home/secrets/initialAdminPassword
-
 # Erros
 ## Table 'database_nlw_test.surveys' doesn't exist
 #### Solução 
