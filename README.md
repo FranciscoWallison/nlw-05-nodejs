@@ -70,6 +70,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 
 ### Deploy
+Esse projeto se utiliza dos serviços gratuitos do heroku, montado com docker 
 [Link Heroku](https://nlw-05-nodejs.herokuapp.com/pages/client)
 ### Screenshot
 ![screenshot](https://github.com/FranciscoWallison/nlw-05-nodejs/blob/master/imgs/home.png)
