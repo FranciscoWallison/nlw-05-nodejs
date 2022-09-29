@@ -2,8 +2,6 @@
 
 <img src="https://github.com/FranciscoWallison/nlw-05-nodejs/blob/master/nodejs/public/images/nlw5-1.jpg" width="900" />
 
-
-
   <h1 align="center">  NPS-API Net Promoter Score  </h1>
 
   <p align="center">Projeto desenvolvido durante a 5° edição da NLW <a href"https://rocketseat.com.br/">na trilha de NODE JS</a> Da <a href"https://rocketseat.com.br/"> Rocketseat</a> . </p>
