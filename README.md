@@ -59,7 +59,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Jenkins](https://www.jenkins.io/)
 - [SonarQube](https://www.sonarqube.org/)
 
-## CI/CD
+## :cyclone: CI/CD
 #### Pipeline
 [Link do Artigo Jenkins](https://github.com/FranciscoWallison/Desenvolvimento-de-aplicacoes-com-Microsservicos/tree/master/Devops/JENKINS)
 ![jenkis](https://github.com/FranciscoWallison/nlw-04-nodejs/blob/master/inforFiles/jenkis.png)
