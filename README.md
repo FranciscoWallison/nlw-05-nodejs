@@ -7,8 +7,6 @@
   <p align="center">Projeto desenvolvido durante a 5° edição da NLW <a href"https://rocketseat.com.br/">na trilha de NODE JS</a> Da <a href"https://rocketseat.com.br/"> Rocketseat</a> . </p>
 
 <p align="center">
-
-
   <img alt="GitHub contagem de linguagens" src="https://img.shields.io/github/languages/count/FranciscoWallison/nlw-05-nodejs?color=%2304D361&style=plastic">
 
   <img alt="Tamanho do repositório" src="https://img.shields.io/github/languages/code-size/FranciscoWallison/nlw-05-nodejs?style=plastic">
@@ -19,7 +17,7 @@
 
   <img src="https://img.shields.io/github/forks/FranciscoWallison/nlw-05-nodejs?style=plastic">
 
-<a href="https://github.com/FranciscoWallison/nlw-05-nodejs/commits/master">
+  <a href="https://github.com/FranciscoWallison/nlw-05-nodejs/commits/master">
     <img alt="GitHub último commit" src="https://img.shields.io/github/last-commit/FranciscoWallison/nlw-05-nodejs?style=plastic">
   </a>
 
