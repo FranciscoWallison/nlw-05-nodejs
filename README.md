@@ -1,4 +1,4 @@
-# [NLW#5] Start Project NodeJs e ...Docker, Docker-Compose, Jenkins, SonarQube Heroku, Sqlit, Mysql, Porstgres, Mongodb,  Testing e CI/CD
+# [NLW#5] Start Project NodeJs e Docker, Docker-Compose, Jenkins, SonarQube Heroku, Sqlit, Mysql, Porstgres, Mongodb,  Testing e CI/CD
 
 <img src="https://github.com/FranciscoWallison/nlw-05-nodejs/blob/master/nodejs/public/images/nlw5-1.jpg" width="900" />
 
